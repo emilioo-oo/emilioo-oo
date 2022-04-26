@@ -59,7 +59,7 @@ void dict_add(struct dict* dictionary, struct kv* keyvalue) { //ok
 		}
 	}
 	else
-	{ //��� �� �������� �� �� �� �������
+	{ 
 		struct kv* kv_searched = dict_search(dictionary, keyvalue->key);
 		kv_destruct(kv_searched);
 		kv_searched = kv_copy(keyvalue);
@@ -113,7 +113,7 @@ void dict_destruct(struct dict* dictionary) { //ok
 	free(dictionary);
 }
 
-void dict_elem_destruct(struct dict* dictionary, char* keyf) { //�k
+void dict_elem_destruct(struct dict* dictionary, char* keyf) { 
 	for (int i = 0; i < dictionary->n; i++) {
 		if (strcmp(dictionary->arr[i]->key, keyf) == 0) { // == 0 если одинаковые
 			if (i != dictionary->n - 1) { //если не последний
